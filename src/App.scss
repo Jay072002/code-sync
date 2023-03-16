@@ -1,0 +1,137 @@
+.homePageWrapper {
+    background: #1c1e29;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+// Home page styling
+
+.formWrapper {
+    width: 25vw;
+    padding: 1rem;
+    background: #282a36;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.04rem;
+
+    >img {}
+
+    >h6 {
+        margin: 0.6rem 0 0.6rem 0.2rem;
+    }
+
+    >input {
+        background-color: #282a36;
+        border-radius: 1rem;
+        margin: 0.3rem 0;
+        padding: 0.6rem 0.3rem;
+        display: block;
+        width: 100%;
+        color: #fff;
+    }
+
+
+
+    >.joinBtn {
+        background-color: rgb(114, 185, 114);
+        margin: 0.6rem 0;
+        align-self: flex-end;
+    }
+
+    >div {
+        font-size: 0.7rem;
+        text-align: center;
+
+        >a {
+            color: rgb(114, 185, 114);
+        }
+    }
+}
+
+// EditorPage styling
+
+.editorWrapper {
+    display: grid;
+    grid-template-columns: 25vw 1fr;
+
+    >.left {
+        background: #000;
+        height: 100vh;
+        color: #fff;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        >.leftInner {
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 80vh;
+
+            >.logo {
+                >img {}
+            }
+
+            >h5 {
+                padding: 0.7rem 0;
+            }
+
+            >.clientsList {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        >.buttons {
+            display: flex;
+            flex-direction: column;
+
+            >button {
+                margin: 0.4rem;
+                padding: 0.5rem;
+                font-weight: bold;
+            }
+
+            >.leaveBtn {
+                background: rgb(49, 145, 49);
+            }
+        }
+    }
+
+    >.right {}
+
+    .leftInner::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .leftInner::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 10px;
+    }
+
+    .leftInner::-webkit-scrollbar-track {
+        background: #1c1e29;
+    }
+
+}
+
+// utility classes
+
+.btn {
+    padding: 0.2rem 0.8rem;
+    border: 1px solid #282a36;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+}
+
+.logoImg {
+    width: 7vw;
+    margin: 0.7rem;
+    filter: invert(100%);
+}
