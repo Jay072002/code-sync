@@ -37,13 +37,15 @@ const Home = () => {
         // redirect
         navigate(`/editor/${roomId}`, {
             state: {
-                userName
-            }
+                userName,
+                roomId
+            },
+            //replace: true //will not create a history stack instead it will replace ==>commented because it does not work if we press back from other page it just navigate to the google home pae because it lost the history stack
         })
     }
 
     const handleEnterKey = (e) => {
-        if (e.code == 'Enter') {
+        if (e.code === 'Enter') {
             joinRoom()
         }
     }
@@ -59,7 +61,6 @@ const Home = () => {
                     }} />
                     <input type="text" placeholder='USERNAME' name='username' value={userName} onKeyUp={handleEnterKey} onChange={(e) => {
                         setUserName(e.target.value)
-                        console.log(userName)
                     }} />
                     <button className='btn joinBtn' onClick={joinRoom} >Join</button>
                     <div>If you don't have an invite then create <a onClick={createNewRoomId} href="#">new room</a></div>
