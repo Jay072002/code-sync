@@ -50,6 +50,18 @@ io.on("connection", (socket) => {
 
     })
 
+    socket.on("disconnecting", () => {
+        const rooms = [...socket.rooms];
+        rooms.forEach(roomId => {
+            io.in(roomId).emit(ACTIONS.LEAVE, {
+                userName: userSocketMap[socket.id],
+                socketId: socket.id
+            })
+        })
+        delete userSocketMap[socket.id];
+        console.log(userSocketMap)
+    })
+
     
 })
 

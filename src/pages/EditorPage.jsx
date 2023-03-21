@@ -62,6 +62,19 @@ const EditorPage = () => {
         setClients(clients)
       })
 
+      socket.current.on(ACTIONS.LEAVE, ({ userName, socketId }) => {
+
+        toast.success(`${userName} left the room`, {
+          duration: 5000
+        })
+
+        setClients(prev => {
+          return prev.filter((client) => {
+            return client.socketId !== socketId
+          })
+        })
+      })
+
     }
 
     init()
